@@ -8,7 +8,7 @@ Replication of two figures from the assignment using the **gapminder** dataset (
 |------|--------|
 | `requirement.md` | Assignment requirements and figure descriptions |
 | `README.md` | This file: structure, replication instructions, process notes |
-| `AI_USAGE.md` | Log of AI tool use (required) |
+| `AI_USAGE.md` | Log of AI tool use |
 | `scripts/00_setup.R` | Loads required packages and sets project-relative paths |
 | `scripts/01_data_prep.R` | Loads gapminder and any shared data preparation |
 | `scripts/02_make_figures.R` | **Entry point**: generates the two output figures |
@@ -28,4 +28,4 @@ I fed the figure descriptions from the assignment to Cursor and had it generate 
 
 ## AI usage
 
-See **`AI_USAGE.md`** for the log of AI tool use (prompts, what was used, and verification).
+See **`AI_USAGE.md`** for the log of AI tool use.
