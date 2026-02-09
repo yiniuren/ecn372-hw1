@@ -49,4 +49,13 @@ Document each meaningful AI interaction as required by the assignment.
 
 ---
 
-*(Add new entries above this block as you use AI.)*
+### 2025-02-09 — Figure 2: debug missing bands/curves (y-axis clipping)
+- **Tool:** Cursor Agent
+- **Prompt:** User reported issues in figure 2: (1) Africa panel—band only from 1967 to 2007, missing earlier part; (2) Asia panel—band missing for 1952–1957; (3) Africa and Oceania panels—curves do not span 1952–2007, missing parts. User asked whether it was due to missing data.
+- **Output summary:** Agent checked gapminder summaries by continent and year. Confirmed the cause was not missing data but the fixed y-axis limits (40–80) clipping values outside that range: Africa’s q25/median below 40 in 1952–1962; Asia’s q25 below 40 in 1952; Oceania’s weighted mean above 80 in 2002–2007. Agent expanded the life expectancy axis to 30–90 with breaks every 10 in scripts/02_make_figures.R so all data is visible.
+- **What I used:** The scale_y_continuous change in 02_make_figures.R (limits = c(30, 90), breaks = seq(30, 90, 10)) and an inline comment explaining why. Regenerated figure-2.pdf.
+- **Verification:** Ran Rscript scripts/02_make_figures.R; no more “Removed rows” warnings; full bands and curves from 1952–2007 in all panels.
+
+---
+
+
