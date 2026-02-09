@@ -50,7 +50,8 @@ p2 <- ggplot(fig2_summary, aes(x = year)) +
   scale_color_manual(values = c("Median" = blue_median, "Population-weighted mean" = orange_weighted)) +
   scale_linetype_manual(values = c("Median" = "solid", "Population-weighted mean" = "22")) +
   scale_x_continuous(breaks = seq(1952, 2007, 5), limits = c(1952, 2007)) +
-  scale_y_continuous(breaks = seq(40, 80, 10), limits = c(40, 80)) +
+  # Y range 30–90 so Africa (q25 down to ~36) and Oceania (wm up to ~81) are not clipped
+  scale_y_continuous(breaks = seq(30, 90, 10), limits = c(30, 90)) +
   facet_wrap(vars(continent), ncol = 2) +
   labs(x = "Year", y = "Life expectancy", color = NULL, linetype = NULL) +
   theme_minimal() +
