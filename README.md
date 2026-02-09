@@ -16,25 +16,16 @@ Replication of two figures from the assignment using the **gapminder** dataset (
 
 ## Replication instructions
 
-**Prerequisites:** R (with packages `tidyverse` and `gapminder`). Optional: use `renv` for a pinned environment (see below).
-
-1. Clone the repo and open a terminal in the project root (`ecn372-hw1/`).
-2. Install R dependencies if needed:
-   ```bash
-   Rscript -e "install.packages(c('tidyverse','gapminder'), repos='https://cloud.r-project.org')"
-   ```
-3. From the **project root**, run the figure-building script:
+1. From the project root, run:
    ```bash
    Rscript scripts/02_make_figures.R
    ```
-4. The two PDFs will appear in `output/`: `output/figure-2.pdf` (ribbon + median/weighted mean by continent) and `output/figure-3.pdf` (dumbbell 1952 vs 2007, top 3 per continent).
+   (Requires R with packages `tidyverse` and `gapminder`.)
 
-**Optional (renv):** To use a reproducible environment, run `renv::init()` and `renv::restore()` in R from the project root, then run the same command above.
+## Process explanation
 
-## Process explanation (reverse-engineering)
-
-[To be filled after choosing and replicating the two figures: describe how you matched the assignment’s figure descriptions to data steps (filters, summaries, geoms, scales) and how you checked your outputs against the intended design.]
+I fed the figure descriptions from the assignment to Cursor and had it generate a first version of each figure. I then compared the results to the target figures in detail—checking axis ranges, axis labels, colors, layout, legend placement, and other details—and told Cursor what to improve. After a few iterations (e.g. fixing the time and life-expectancy axis breaks, switching to blue/orange for median vs population-weighted mean, moving the legend to the top, and for figure 3 grouping by continent with labels on the left and adding the title and “years gained” labels), I got the figures we wanted. When the ribbon and curves in figure 2 appeared to be missing in some panels, I asked Cursor to debug; it turned out the fixed y-axis (40–80) was clipping the data, so we expanded the life-expectancy axis to 30–90 and the full series showed correctly.
 
 ## AI usage
 
-See **`AI_USAGE.md`** for the required log of AI tool use (Cursor Chat/Agent, prompts, what was used, and verification).
+See **`AI_USAGE.md`** for the log of AI tool use (prompts, what was used, and verification).
