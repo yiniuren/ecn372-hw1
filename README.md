@@ -27,7 +27,7 @@ Replication of two figures from the assignment using the **gapminder** dataset (
    ```bash
    Rscript scripts/02_make_figures.R
    ```
-4. The two PDFs will appear in `output/` (e.g. `output/figure-1.pdf`, `output/figure-2.pdf`).
+4. The two PDFs will appear in `output/`: `output/figure-2.pdf` (ribbon + median/weighted mean by continent) and `output/figure-3.pdf` (dumbbell 1952 vs 2007, top 3 per continent).
 
 **Optional (renv):** To use a reproducible environment, run `renv::init()` and `renv::restore()` in R from the project root, then run the same command above.
 
