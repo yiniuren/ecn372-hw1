@@ -40,4 +40,13 @@ Document each meaningful AI interaction as required by the assignment.
 
 ---
 
+### 2025-02-09 — Figure 2 & 3: axis limits, blue/orange colors, legend, facets, title
+- **Tool:** Cursor Agent
+- **Prompt:** User requested multiple adjustments. Figure 2: (1) Time axis 1952–2007, break every 5 years; (2) Life expectancy axis 40–80, break every 10; (3) No continent colors—blue for median, orange for population-weighted mean (Python-style #1f77b4, #ff7f0e); (4) Legend on top, centered; tighter dashed line ("22"). Figure 3: (1) Group by continent, continent labels on left; order Africa → Americas → Asia → Europe → Oceania; (2) Lines gray, left endpoint blue and right endpoint orange; (3) Life expectancy axis 20–90, break every 10; (4) Two-line title + subtitle, legend under title (blue = 1952, orange = 2007); (5) X-axis label "Life expectancy (years)".
+- **Output summary:** Agent updated scripts/02_make_figures.R: Fig2—ribbon fill gray85, lines colored by measure (blue/orange), scale_x/y_continuous with requested breaks and limits, linetype "22" for tighter dashes, legend.position = "top" and justification center. Fig3—continent factor order and arrange for row order, facet_grid(continent ~ ., switch = "y", space = "free_y") for left continent labels, gray segments and blue/orange points by year, scale_x_continuous(20–90, 10), title/subtitle with element_text(hjust = 0.5), legend on top, x lab "Life expectancy (years)".
+- **What I used:** All changes in 02_make_figures.R (fig2 and fig3 blocks). Shared blue_median and orange_weighted for both figures.
+- **Verification:** Ran Rscript scripts/02_make_figures.R; script completed; warnings about rows outside scale range (expected for y 40–80 in early years).
+
+---
+
 *(Add new entries above this block as you use AI.)*
